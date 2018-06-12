@@ -1,0 +1,12 @@
+{
+    "name": "barracuda/modulab",
+    "description": "CRM customizable with plugins",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "barracuda75",
+            "email": "wilsai.mede@hetic.net"
+        }
+    ],
+    "require": {}
+}
