@@ -9,7 +9,6 @@ class Home extends Controller {
     public function compte() {
         $projects = DB::select( 'select * from news order by id desc' );
 
-
         $this->view( 'home/compte', ['projects' => $projects] );
     }
 

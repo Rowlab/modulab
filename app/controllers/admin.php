@@ -91,7 +91,7 @@ class Admin extends Controller {
 
   public function deconnexion() {
     if ( !isset( $_SESSION['id'] ) ) {
-      header( 'Location: /home' );
+        header( 'Location: /home' );
     }
 
     $_SESSION = [];
@@ -105,6 +105,7 @@ class Admin extends Controller {
     }
 
     session_destroy();
+    header( 'Location: /' );
   }
 
   public function supprimerRevue( int $id ) {
