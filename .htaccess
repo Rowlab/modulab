@@ -1,0 +1,10 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+RewriteBase /SI_MVC_POO
+
+RewriteRule ^(.*)$ /public/$1
+
+
+
