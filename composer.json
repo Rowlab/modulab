@@ -1,0 +1,15 @@
+{
+  "name": "Rowlab/modulab",
+  "description": "CRM customizable with plugins",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "barracuda75",
+      "email": "wilsai.mede@hetic.net"
+    }
+  ],
+  "require": {
+    "friendsofphp/php-cs-fixer": "^2.12",
+    "php": ">=7.1"
+  }
+}
