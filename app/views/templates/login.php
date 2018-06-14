@@ -5,7 +5,7 @@ include('head.php');
 
 
 <div class="login__loader">
-  <img src="../images/gif_loader.gif" alt="">
+  <img src="../images/gif_loader.gif" alt="gifloader">
 </div>
 
 <div class="row">
