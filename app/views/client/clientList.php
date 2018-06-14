@@ -1,5 +1,5 @@
-<?php include(ROOT . 'app/views/includes/header.php');
+<?php include(ROOT . 'app/views/templates/head.php');
 
-  var_dump($data['clients']);
+var_dump($data['clients']);
 
- include(ROOT . 'app/views/includes/footer.php');
+include(ROOT . 'app/views/templates/footer.php');

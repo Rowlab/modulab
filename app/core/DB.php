@@ -1,10 +1,10 @@
 <?php
 class DB extends PDO
 {
-    const DSN = 'mysql:host=localhost;dbname=modulab2';
+    const DSN = 'mysql:host=localhost;port=3306;dbname=modulab2';
     const USER = 'root';
     const PASSWORD = 'root';
-    
+
     public function __construct()
     {
         try {

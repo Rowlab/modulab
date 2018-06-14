@@ -1,4 +1,4 @@
-<?php include(ROOT . 'app/views/includes/header.php'); ?>
+<?php include(ROOT . 'app/views/templates/head.php'); ?>
 
 <p>Add new collaborator</p>
 <div style="color: red;">
@@ -52,4 +52,4 @@
 ?>
 
 
-<?php include(ROOT . 'app/views/includes/footer.php');
+<?php include(ROOT . 'app/views/templates/footer.php');

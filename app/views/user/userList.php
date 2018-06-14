@@ -1,5 +1,5 @@
 <?php
-include(ROOT . 'app/views/includes/header.php');
+include(ROOT . 'app/views/templates/head.php');
 if ($data['users']) {
     foreach ($data['users'] as $user) {
         ?>
@@ -36,4 +36,4 @@ if ($data['users']) {
     }
 }
 
-include(ROOT . 'app/views/includes/footer.php');
+include(ROOT . 'app/views/templates/footer.php');
