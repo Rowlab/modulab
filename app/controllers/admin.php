@@ -13,7 +13,7 @@ class Admin extends Controller
         }
 
         $users = DB::select('select `name`, `surname`, `mail` from user where `active` = 1 order by id desc');
-        $this->view('templates/login', ['users' => $users]);
+        $this->view('admin/index', ['users' => $users]);
     }
 
     /**
