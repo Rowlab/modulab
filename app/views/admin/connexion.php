@@ -1,4 +1,5 @@
-<?php include(ROOT . 'app/views/includes/header.php'); ?>
+<?php include(ROOT . 'app/views/includes/header.php');
+?>
 <div>
     <?php if (isset($data['erreur'])) : ?>
     <div>
