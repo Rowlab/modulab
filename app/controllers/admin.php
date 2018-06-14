@@ -8,10 +8,10 @@ class Admin extends Controller
      */
     public function index()
     {
-        if (!isset($_SESSION['id'])) {
+        if (isset($_SESSION['id'])) {
             $_SESSION['infos'] = admin::getInformations($_SESSION['id']);
         }
-        
+
         $users = DB::select('select `name`, `surname`, `mail` from user where `active` = 1 order by id desc');
         $this->view('templates/login', ['users' => $users]);
     }
