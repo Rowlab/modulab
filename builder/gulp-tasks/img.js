@@ -15,7 +15,7 @@ var imgTask = function (gulp, callback) {
 		})(err);
 		this.emit('end');
 	};
-	return gulp.src(path + '/img/**/*')
+	return gulp.src(path + '/images/**/*')
 		.pipe(imagemin())
 		.pipe(gulp.dest(path + '/dist/images'));
 };

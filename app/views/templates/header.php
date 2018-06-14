@@ -1,5 +1,6 @@
+<!-- <?php //if ($_SERVER['REQUEST_URI'] != '/') : ?>
 <header>
-  <!-- <nav>
+  <nav>
     <ul>
       <li>
         <a href="/">Retour à l'accueil</a>
@@ -8,7 +9,7 @@
       <li>
         <a href="/admin/deconnexion">Déconnexion</a>
       </li>
-      <?php// endif; ?>
+      <?php //endif; ?>
       <li>
         <a href="/user">User list</a>
       </li>
@@ -22,5 +23,5 @@
     </a>
     <?php //endif; ?>
     </div>
-  </nav> -->
-</header>
+  </nav>
+</header> -->

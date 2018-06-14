@@ -20,5 +20,5 @@ gulp.task('run', ['sass', 'scripts', 'img', 'copy']);
 gulp.task('default', function(){
     gulp.watch(myPath + "/styles/**/*.scss", ['sass']);
     gulp.watch(myPath + "/script/**/*.js", ['scripts']);
-    gulp.watch([myPath + "/src/img/**/*.*"], ['img']);
+    gulp.watch([myPath + "/images/**/*.*"], ['img']);
 });

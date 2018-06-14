@@ -16,10 +16,10 @@
   <meta name="format-detection" content="telephone=no">
 
   <!-- CSS minified -->
-  <link rel="stylesheet" href='dist/styles/app.min.css'>
-
+  <link rel="stylesheet" href="/dist/styles/app.min.css">
 </head>
 
 <body>
-  <?php
+
+<?php
 include('header.php');

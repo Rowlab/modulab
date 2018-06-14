@@ -21,7 +21,7 @@ module.exports = function (gulp, callback) {
         this.emit('end');
     };
 
-    gulp.src(path + '/src/js/copy/*.js')
+    gulp.src(path + '/script/*.js')
 		.pipe(plumber({
 			errorHandler: function (error) {
 				console.log(error.message);
@@ -31,7 +31,7 @@ module.exports = function (gulp, callback) {
 		//.pipe(uglify())
 		.pipe(gulp.dest(path + '/dist/scripts/'));
 
-    return gulp.src(path + '/src/js/app.js')
+    return gulp.src(path + '/script/app.js')
         .pipe(plumber({
             errorHandler: function (error) {
                 console.log(error.message);
