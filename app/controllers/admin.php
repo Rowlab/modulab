@@ -8,6 +8,13 @@ class Admin extends Controller
      */
     public function index()
     {
+
+        //TODO: Faire la page profile edit
+        // TODO : Change link enabled
+        // TODO : Link job => job_id
+        // TODO : Ajouter une entrée dans la table job when user created
+        // TODO : Add function when userEdit
+
         if (!isset($_SESSION['id'])) {
             header('Location: /admin/connexion');
         }

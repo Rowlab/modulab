@@ -30,7 +30,7 @@ CREATE TABLE `client` (
   `id` int(11) NOT NULL,
   `company_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_by` int(11) DEFAULT NULL,
-  `created_at` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
   `active` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -74,7 +74,7 @@ CREATE TABLE `note` (
   `content` text COLLATE utf8mb4_unicode_ci,
   `type` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_by` int(11) NOT NULL,
-  `created_at` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
   `active` tinyint(4) NOT NULL DEFAULT '0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -91,7 +91,7 @@ CREATE TABLE `user` (
   `job_id` int(11) DEFAULT NULL,
   `mail` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp(6) NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
   `active` tinyint(4) NOT NULL DEFAULT '1',
   `role` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
