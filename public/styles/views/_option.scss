@@ -17,6 +17,7 @@ $terciary-color :   #FFFFFF;
 
 $avalon :               'Avalon-Medium' , Arial, sans-serif;
 $avalon-italique :      'Avalon-Medium-italique', Arial, sans-serif;
+$avalon-demi:           'Avalon-Demi', Arial, sans-serif;
 $avalon-bold:           'avalon-bold', Arial, sans-serif;
 $avalon-bold-italique:  'Avalon-bold-italique', Arial, sans-serif;
 
@@ -26,18 +27,18 @@ $avalon-bold-italique:  'Avalon-bold-italique', Arial, sans-serif;
 }
 
 @font-face {
- font-family: "Avalon-Bold";
- src: url("../font/Avalon-Bold.otf") format("otf");
+ font-family: "Avalon-Demi";
+ src: url("../font/Avalon-Demi.otf");
 }
 
 @font-face {
  font-family: "Avalon-bold-italique";
- src: url("../font/Avalon-BoldOblique.otf") format("otf");
+ src: url("../font/Avalon-BoldOblique.otf") ;
 }
 
 @font-face {
  font-family: "Avalon-Medium";
- src: url("../font/Avalon-Medium.otf") format("otf");
+ src: url("../font/Avalon-Medium.otf");
 }
 
 @font-face {

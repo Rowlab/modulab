@@ -3,10 +3,10 @@ include('head.php');
 ?>
 <div class="login">
 
-
+<!--
 <div class="login__loader">
   <img src="../images/gif_loader.gif" alt="gifloader">
-</div>
+</div> -->
 
 <div class="row">
   <div class="columns medium-7 medium-centered">
@@ -22,23 +22,24 @@ include('head.php');
   <div class="columns medium-7 medium-centered">
     <div class="login__ids__wraper">
       <div class="login__ids__content">
-        <?php if (isset($data['erreur'])) : ?>
-        <div>
-          <?= $data['erreur'] ?>
-        </div>
-        <?php endif; ?>
 
-        <p>Connectez vous à votre compte</p>
         <form action="/admin/connexion" method="post">
+          <?php if (isset($data['erreur'])) : ?>
           <div>
-            <label for="mail">E-mail</label>
-            <input type="mail" name="mail" placeholder="Email">
+            <?= $data['erreur'] ?>
           </div>
-          <div>
-            <label for="password">Password</label>
-            <input type="password" name="password" placeholder="Password">
-          </div>
-          <input type="submit" value="connexion">
+          <?php endif; ?>
+
+            <input type="mail" name="mail" placeholder="Votre adresse e-mail">
+            <input type="password" name="password" placeholder="Votre mot de passe">
+
+            <div class="login__ids__content__help">
+              <a href="#">Je n’ai pas encore de compte</a>
+              <a href="#">Mot de passe oublié ?</a>
+            </div>
+
+          <button type="submit" value="connexion">Valider</button>
+            <input type="submit" value="connexion" placeholder="valider">
         </form>
       </div>
     </div>
@@ -49,3 +50,16 @@ include('head.php');
 <?php
 include('footer.php');
 ?>
+
+<div class="home">
+  <div class="row fullWidth">
+    <div class="columns medium-3">
+      <div class="logo">
+
+      </div>
+    </div>
+    <div class="columns medium-9">
+
+    </div>
+  </div>
+</div>
