@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after { 
+    box-sizing: border-box;
+}
+
+
+
+$main-color :       #FFFFFF;
+$secondary-color :  #FFFFFF;
+$terciary-color :   #FFFFFF;
+
+$avalon :               'Avalon-Medium', Arial, sans-serif;
+$avalon-italique :      'Avalon-Medium-italique', Arial, sans-serif;
+$avalon-bold:           'Avalon-Bold', Arial, sans-serif;
+$avalon-bold-italique:  'Avalon-bold-italique', Arial, sans-serif;
+
+@font-face {
+ font-family: "Avalon-Bold";
+ src: url("../dist/font/Avalon-Bold.otf") format("otf");
+}
+
+@font-face {
+ font-family: "Avalon-Bold";
+ src: url("../dist/font/Avalon-Bold.otf") format("otf");
+}
+
+@font-face {
+ font-family: "Avalon-bold-italique";
+ src: url("../dist/font/Avalon-BoldOblique.otf") format("otf");
+}
+
+@font-face {
+ font-family: "Avalon-Medium";
+ src: url("../dist/font/Avalon-Medium.otf") format("otf");
+}
+
+@font-face {
+ font-family: "Avalon-Medium-italique";
+ src: url("../dist/font/Avalon-MediumOblique.otf") format("otf");
+}

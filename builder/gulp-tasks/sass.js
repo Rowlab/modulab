@@ -18,15 +18,15 @@ module.exports = function (gulp, callback) {
         this.emit('end');
     };
 
-    // gulp.src(path + '/styles/*.css')
-    // .pipe(plumber({
-    //     errorHandler: function (error) {
-    //         console.log(error.message);
-    //         this.emit('end');
-    //     }
-    // }))
-    //.pipe(uglify())
-    // .pipe(gulp.dest(path + '/dist/styles/'));
+    gulp.src(path + '/styles/*.css')
+    .pipe(plumber({
+        errorHandler: function (error) {
+            console.log(error.message);
+            this.emit('end');
+        }
+    }))
+    // .pipe(uglify())
+    .pipe(gulp.dest(path + '/dist/styles/'));
 
 
     return gulp.src([path + '/styles/**/*.scss'])

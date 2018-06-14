@@ -1,4 +1,5 @@
-<?php include(ROOT . 'app/views/includes/header.php'); ?>
+<?php include(ROOT . 'app/views/templates/head.php'); ?>
+
 <div>
     <?php if (isset($data['erreur'])) : ?>
     <div>
@@ -18,4 +19,5 @@
         <input type="submit" value="connexion">
     </form>
 </div>
-<?php include(ROOT . 'app/views/includes/footer.php');
+
+<?php include(ROOT . 'app/views/templates/footer.php');

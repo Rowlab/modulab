@@ -2,9 +2,6 @@ Options +FollowSymLinks
 
 RewriteEngine on
 
-RewriteBase /SI_MVC_POO
+RewriteBase /modulab
 
-RewriteRule ^(.*)$ /public/$1
-
-
-
+RewriteRule ^(.*)$ public/$1
