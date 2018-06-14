@@ -24,5 +24,3 @@
     </div>
   </nav> -->
 </header>
-
-<?php include($template_path . 'login.php'); ?>

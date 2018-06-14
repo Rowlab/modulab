@@ -1,3 +1,9 @@
+<?php
+
+include($template_path . 'head.php');
+
+?>
+
 <div class="row">
 
   <div class="columns medium-4">
