@@ -68,8 +68,9 @@ class User extends Controller
                 header('Location: /admin');
             }
 
-            $this->view('admin/index', ['erreur' => $erreur, 'users' => $users]);
+            $this->view('user/userAdd', ['erreur' => $erreur, 'users' => $users]);
         }
+        $this->view('user/userAdd');
     }
 
     /**
@@ -97,7 +98,7 @@ class User extends Controller
     public function disableUser($id)
     {
         DB::update('update user set active = 0 where id = '.$id.'');
-        header('Location: /user/useruserList');
+        header('Location: /user/userList');
     }
 
     /**
@@ -109,7 +110,7 @@ class User extends Controller
     public function enableUser($id)
     {
         DB::update('update user set active = 1 where id = '.$id.'');
-        header('Location: /user/useruserList');
+        header('Location: /user/userList');
     }
 
     /**
