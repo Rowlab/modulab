@@ -10,10 +10,11 @@ class Admin extends Controller
     {
         if (isset($_SESSION['id'])) {
             $_SESSION['infos'] = admin::getInformations($_SESSION['id']);
+            $users = DB::select('select `name`, `surname`, `mail` from user where `active` = 1 order by id desc');
+            $this->view('admin/index', ['users' => $users]);
+        } else {
+            $this->view('templates/login');
         }
-
-        $users = DB::select('select `name`, `surname`, `mail` from user where `active` = 1 order by id desc');
-        $this->view('admin/index', ['users' => $users]);
     }
 
     /**
@@ -48,10 +49,10 @@ class Admin extends Controller
                 $erreur = 'Identifiants erronés';
             }
 
-            $this->view('admin/connexion', ['erreur' => $erreur]);
+            $this->view('templates/login', ['erreur' => $erreur]);
         }
 
-        $this->view('admin/connexion');
+        $this->view('templates/login');
     }
 
     /**
@@ -62,7 +63,7 @@ class Admin extends Controller
     public function deconnexion()
     {
         if (!isset($_SESSION['id'])) {
-            header('Location: /home');
+            header('Location: /');
         }
 
         $_SESSION = [];
