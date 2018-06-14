@@ -27,6 +27,8 @@
 
   <input type="text" name="password" placeholder="Password">
 
+  <input type="text" name="job" placeholder="Job">
+
   <input type="text" name="address" value="<?php if (isset($data['userInfos'][0]['address'])) {
     echo $data['userInfos'][0]['address'];
 } ?>" placeholder="Address">

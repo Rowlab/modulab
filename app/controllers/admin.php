@@ -8,9 +8,6 @@ class Admin extends Controller
      */
     public function index()
     {
-
-        //TODO: Faire la page profile edit
-        // TODO : Change link enabled
         // TODO : Link job => job_id
         // TODO : Ajouter une entrée dans la table job when user created
         // TODO : Add function when userEdit
@@ -18,9 +15,11 @@ class Admin extends Controller
         if (!isset($_SESSION['id'])) {
             header('Location: /admin/connexion');
         }
-        
-        $_SESSION['infos'] = admin::getInformations($_SESSION['id']);
 
+        if (!isset($_SESSION['id'])) {
+            $_SESSION['infos'] = admin::getInformations($_SESSION['id']);
+        }
+        
         $users = DB::select('select `name`, `surname`, `mail` from user where `active` = 1 order by id desc');
         $this->view('admin/index', ['users' => $users]);
     }
@@ -44,10 +43,6 @@ class Admin extends Controller
      */
     public function connexion()
     {
-        if (isset($_SESSION['id'])) {
-            header('Location: /admin');
-        }
-
         if (!empty($_POST)) {
             extract($_POST);
 

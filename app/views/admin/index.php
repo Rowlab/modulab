@@ -1,7 +1,6 @@
 <?php include(ROOT . 'app/views/includes/header.php'); ?>
 
 <p>Add new collaborator</p>
-
 <div style="color: red;">
     <?php if (isset($data['erreur']['name'])) : ?>
     <?= $data['erreur']['name'] ?>
