@@ -1,0 +1,243 @@
+@import url('https://fonts.googleapis.com/css?family=Lato:300,400,700,900');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+ul {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: #000;
+}
+
+.clearfix:before,
+.clearfix:after {
+    content: " ";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+body {
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+main {
+    max-width: 100%;
+}
+
+div.wrapper {}
+
+div.wrap {}
+
+span.strong {
+    font-weight: 700;
+}
+
+
+/* ->->->->->->->->->->->-> INDEX.HTML <-<-<-<-<-<-<-<-<-<-<- */
+
+
+/* Nav top (all pages) */
+
+nav {
+    position: fixed;
+    z-index: 2;
+    background: #fff;
+    zheight: 77px;
+    width: 100%;
+    border-bottom: 1px solid #000;
+}
+
+nav div {
+    height: 60px;
+    float: left;
+}
+
+nav>div:nth-of-type(1) {
+    position: relative;
+    width: 20%;
+    float: left;
+    background: #000;
+    -webkit-transform: skew(30deg);
+    -ms-transform: skew(30deg);
+    -o-transform: skew(30deg);
+    transform: skew(30deg);
+    right: 1%;
+}
+
+nav>div:nth-of-type(1)>h1 {
+    width: 100%;
+    margin: 0;
+    height: 50px;
+}
+
+nav>div:nth-of-type(1)>h1>img {
+    display: block;
+    width: 70%;
+    zheight: 77px;
+    margin: 3% 0 0 15%;
+    -webkit-transform: skew(-30deg);
+    -ms-transform: skew(-30deg);
+    -o-transform: skew(-30deg);
+    transform: skew(-30deg);
+}
+
+nav>div:nth-of-type(2) {
+    float: left;
+    width: 75%;
+    padding: 2% 0 0 0;
+    text-align: right;
+}
+
+
+/* End nav menu */
+
+
+/* Sous-bloc nav pour positionnement fixed */
+
+.al-sous-port {
+    background: #fff;
+    width: 100%;
+    height: 60px;
+}
+
+
+/* End sous bloc nav */
+
+
+/* Filtre gauche (all pages) */
+
+.fk-nav-gauche {
+    background-color: #545454;
+    width: 19.2%;
+    position: fixed;
+    height: 100%;
+}
+
+.fk-ul-nav-gauche {
+    padding-left: 10%;
+}
+
+.fk-li-nav-gauche:first-child {
+    margin-top: 15%;
+}
+
+.fk-li-nav-gauche {
+    padding: 5%;
+}
+
+.fk-li-nav-gauche:hover {
+    background: #fff;
+}
+
+.fk-li-nav-gauche:hover a {
+    color: #545454;
+}
+
+.fk-li-nav-gauche a {
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* End filtre gauche */
+
+
+/* Form Ajout */
+
+.al-ajout {
+    float: right;
+    width: 70%;
+    margin: 5% 5% 0 0;
+    padding: 2%;
+    border: 1px solid #545454;
+}
+
+.al-ajout p {
+    padding: 1% 0 2% 5%;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.al-ajout label {
+    float: left;
+    width: 20%;
+    font-size: 18px;
+    font-weight: 300;
+    display: inline-block;
+}
+
+.al-ajout input {
+    float: right;
+    width: 70%;
+}
+
+.al-ajout input[type=submit] {
+    margin: 15px 0;
+    background: #fff;
+    border: 1px solid #545454;
+    font-size: 18px;
+    font-weight: 300;
+}
+
+.al-ajout input[type=submit]:hover {
+    background: #545454;
+    color: #fff;
+}
+
+
+/* End form ajout */
+
+
+/* Table content */
+
+table {
+    width: 70%;
+    float: right;
+    margin: 5% 5% 5% 0;
+}
+
+.fk-titre-th {
+    border-bottom: 1px solid #000;
+    text-transform: uppercase;
+}
+
+.fk-titre-th th {
+    text-align: center;
+}
+
+.fk-contenu-tr {
+    border: 1px solid #000;
+    background-color: #eeecec;
+    text-align: center;
+}
+
+.fk-contenu-tr,
+td {
+    padding: 15px;
+}
+
+.fk-contenu-tr a:hover {
+    color: #000;
+}
+
+.fk-contenu-tr img {
+    width: 50px;
+    padding: 2% 0 2% 2%;
+}
+
+
+/* End table content */
