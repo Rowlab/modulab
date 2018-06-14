@@ -11,7 +11,6 @@ class Client extends Controller
         if (!isset($_SESSION['id'])) {
             header('Location: /admin/connexion');
         }
-
         $clients = DB::select('select * from client order by id desc');
         $this->view('client/clientlist', ['clients' => $clients]);
     }
@@ -29,10 +28,10 @@ class Client extends Controller
         }
 
         $client = DB::select('SELECT * FROM client inner join client_info where id = '.$id.'');
+
         if (!$client) {
             header('Location: /client');
         }
-
         $this->view('client/clientDetails', ['client' => $client]);
     }
 
@@ -60,8 +59,7 @@ class Client extends Controller
                 ]);
                 
                 $req = DB::select('select id from client order by id desc');
-  
-                DB::insert('INSERT INTO `client_info` (`client_id`) VALUES (:client_id)', [
+                $test = DB::insert('INSERT INTO `client_info` (`client_id`) VALUES (:client_id)', [
                   'client_id' => $req[0]['id'],
                 ]);
 

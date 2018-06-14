@@ -1,4 +1,4 @@
-<?php if ($_SERVER['REQUEST_URI'] != '/') : ?>
+<?php if ($_SERVER['REQUEST_URI'] != '/' && ($_SERVER['REQUEST_URI'] != '/admin/connexion')) : ?>
 <header>
   <nav>
     <ul>
