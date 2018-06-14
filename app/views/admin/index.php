@@ -1,4 +1,7 @@
-<?php include(ROOT . 'app/views/templates/head.php'); ?>
+<?php include(ROOT . 'app/views/templates/head.php');
+
+var_dump($_SESSION['id']);
+?>
 
 <p>Add new collaborator</p>
 <div style="color: red;">

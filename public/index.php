@@ -7,6 +7,7 @@ error_reporting(-1);
 // define('ROOT', str_replace('public/index.php', '', $_SERVER['SCRIPT_FILENAME']));
 
 define('ROOT', dirname(__DIR__) . '/');
+define('TEMPLATES_PATH', 'app/views/templates/');
 
 
 require_once ROOT . 'app/core/App.php';
