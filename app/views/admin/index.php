@@ -1,5 +1,4 @@
 <?php include(ROOT . 'app/views/templates/head.php');
-
 ?>
 
 <p>Add new collaborator</p>
