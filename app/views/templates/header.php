@@ -18,8 +18,8 @@
       </li>
     </ul>
     <?php if (isset($_SESSION['id'])) : ?>
-    <a href="/user/userProfile/">Connected as
-      <?php $_SESSION['infos'][0]['name']; ?>
+    <a href="/user/editUser/<?= $_SESSION['id'] ?>">Connected as
+      <?= $_SESSION['infos'][0]['name']; ?>
     </a>
     <?php endif; ?>
     </div>

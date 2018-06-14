@@ -88,27 +88,6 @@ class Admin extends Controller
     /**
      * Undocumented function
      *
-     * @param integer $id
-     * @return array
-     */
-    public function details(int $id)
-    {
-        if (!isset($_SESSION['id'])) {
-            header('Location: /admin/connexion');
-        }
-
-        $project = DB::select('select * from project where id = ?', [$id]);
-
-        if (!$project) {
-            header('Location: /admin');
-        }
-
-        $this->view('user/userDetails', ['project' => $project]);
-    }
-
-    /**
-     * Undocumented function
-     *
      * @return array
      */
     private function accountExists() : array
