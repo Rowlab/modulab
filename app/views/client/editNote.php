@@ -33,17 +33,18 @@
             <?php endif; ?>
           </div>
 
-          <form action="/client/addNote" method="post">
-            <input type="text" name="title" value="<?php if (isset($_POST['title'])) {
-     echo $_POST['title'];
- } ?>" placeholder="Title">
+          <form action="/client/editNote/<?= $data['note'][0]['id'] ?>" method="post">
+            <input type="text" name="title" value="<?php if (isset($data['note'][0]['title'])) {
+     echo $data['note'][0]['title'];
+ } ?>" placeholder="title">
 
-            <input type="text" name="content" value="<?php if (isset($_POST['content'])) {
-     echo $_POST['content'];
- } ?>" placeholder="Content">
+            <input type="text" name="content" value="<?php if (isset($data['note'][0]['content'])) {
+     echo $data['note'][0]['content'];
+ } ?>" placeholder="content">
 
-            <input type="hidden" name="id" value="<?= $data['id'] ?>" />
-            <button class="button" type="submit">Add</button>
+            <input type="hidden" name="id" value="<?= $data['note'][0]['id'] ?>" />
+            <button class="button" type="input">Edit</button>
+          </form>
           </form>
         </div>
 

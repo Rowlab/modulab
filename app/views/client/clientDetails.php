@@ -1,56 +1,66 @@
-<?php
-include(ROOT . 'app/views/templates/head.php');
-if (isset($data['client'])) {
-    ?>
+<?php include(ROOT . 'app/views/templates/head.php');
+ ?>
+<div class="home">
+  <div class="row fullWidth">
+    <div class="columns medium-3 paddless">
+      <nav class="home__aside">
+        <div class="home__aside__logo"></div>
 
-<p>Company name :
-  <?= $data['client'][0]['company_name'] ?>
-</p>
-<p>Created by :
-  <?= $data['client'][0]['created_by'] ?>
-</p>
-<p>Created at :
-  <?= $data['client'][0]['created_at'] ?>
-</p>
-<p>Contact name :
-  <?= $data['client'][0]['contact_name'] ?>
-</p>
-<p>Phone:
-  <?= $data['client'][0]['phone'] ?>
-</p>
-<p>Fax:
-  <?= $data['client'][0]['fax'] ?>
-</p>
-<p>Address:
-  <?= $data['client'][0]['address'] ?>
-</p>
-<p>Mail:
-  <?= $data['client'][0]['mail'] ?>
-</p>
+        <div class="home__aside__links selected">
+          <a href="#">Overview</a>
+        </div>
+        <div class="home__aside__links">
+          <a href="/client">Clients</a>
+        </div>
+        <div class="home__aside__links">
+          <a href="#" class="plug-in">Ajouter un plug-in</a>
+        </div>
+
+      </nav>
+    </div>
+    <div class="columns medium-9 paddless">
+      <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
+
+      <div class="home__content">
+        <div class="home__content__wraper">
+          <div class="home__content__details">
+            <div class="home__content__details__notes">
+              <h1>Nota bene</h1>
+              <?php if (isset($data['notes'])) :?>
+
+              <?php foreach ($data['notes'] as $note) {
+     ?>
+              <div class="home__content__details__note">
+                <p>
+                  <?= $note['title'] ?>
+                </p>
+                <span>
+                  <?= $note['content'] ?>
+                </span>
+
+                <a href="/client/deleteNote/<?= $note['id'] ?>" onClick="return confirm('Are you sure ?')">Remove</a>
+
+                <a href="/client/editNote/<?= $note['id'] ?>">Edit</a>
+              </div>
+              <?php
+ } ?>
+
+              <?php endif; ?>
+            </div>
+
+            <a class="button expanded" href="/client/addNote/<?= $data['client'][0]['id'] ?>">Add note</a>
 
 
-<?php
-} ?>
+          </div>
+        </div>
+      </div>
 
-<a href="/client/addNote/<?= $data['client'][0]['id'] ?>">Add note</a>
 
-<?php if (isset($data['notes'])) :?>
+    </div>
 
-<?php foreach ($data['notes'] as $note) {
-        ?>
-<p>Titre :
-  <?= $note['title'] ?>
-</p>
-<p>Contenu :
-  <?= $note['content'] ?>
-</p>
+  </div>
+</div>
+</div>
 
-<a href="/client/deleteNote/<?= $note['id'] ?>" onClick="return confirm('Are you sure ?')">Remove</a>
-<a href="/client/editNote/<?= $note['id'] ?>">Edit</a>
+<?php include(ROOT . 'app/views/templates/footer.php'); ?>
 
-<?php
-    } ?>
-
-<?php endif; ?>
-
-<?php include(ROOT . 'app/views/templates/footer.php');
