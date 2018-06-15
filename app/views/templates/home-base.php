@@ -17,12 +17,19 @@
       </nav>
     </div>
     <div class="columns medium-9 paddless">
-      <div class="home__account">
+        <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
 
-      </div>
-    </div>
-    <div class="columns medium-9 paddless">
+
       <div class="home__content">
+        <div class="home__content__wraper">
+          <h1 class="home__content__title">Bienvenue Jane</h1>
+          <h2 class="home__content__subtitle">Personnalisez votre espace Modulab 📊</h2>
+          <div class="home__content__wiget">
+            <p>+ Ajouter un widget</p>
+          </div>
+        </div>
+
+
         <?php include(ROOT . 'app/views/templates/home-profil.php');?>
       </div>
     </div>
