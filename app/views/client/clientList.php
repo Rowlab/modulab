@@ -1,10 +1,10 @@
 <?php
-include(ROOT . 'app/views/templates/head.php');
+include(ROOT . 'app/views/templates/head.php'); ?>
+<a href="/client/addClient">Add new client</a>
 
-if (isset($data['clients'])) {
+<?php if (isset($data['clients'])) {
     foreach ($data['clients'] as $client) {
         ?>
-<a href="client/addClient">Add new client</a>
 <div>
   <p>Compagny name :
     <?= $client['company_name'] ?>

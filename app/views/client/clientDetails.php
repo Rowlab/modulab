@@ -1,36 +1,56 @@
 <?php
 include(ROOT . 'app/views/templates/head.php');
 if (isset($data['client'])) {
-    foreach ($data['client'] as $client) {
-        ?>
+    ?>
 
 <p>Company name :
-  <?= $client['company_name'] ?>
+  <?= $data['client'][0]['company_name'] ?>
 </p>
 <p>Created by :
-  <?= $client['created_by'] ?>
+  <?= $data['client'][0]['created_by'] ?>
 </p>
 <p>Created at :
-  <?= $client['created_at'] ?>
+  <?= $data['client'][0]['created_at'] ?>
 </p>
 <p>Contact name :
-  <?= $client['contact_name'] ?>
+  <?= $data['client'][0]['contact_name'] ?>
 </p>
 <p>Phone:
-  <?= $client['phone'] ?>
+  <?= $data['client'][0]['phone'] ?>
 </p>
 <p>Fax:
-  <?= $client['fax'] ?>
+  <?= $data['client'][0]['fax'] ?>
 </p>
 <p>Address:
-  <?= $client['address'] ?>
+  <?= $data['client'][0]['address'] ?>
 </p>
 <p>Mail:
-  <?= $client['mail'] ?>
+  <?= $data['client'][0]['mail'] ?>
 </p>
 
-<?php
-    }
-}
 
-include(ROOT . 'app/views/templates/footer.php');
+<?php
+} ?>
+
+<a href="/client/addNote/<?= $data['client'][0]['id'] ?>">Add note</a>
+
+<?php if (isset($data['notes'])) :?>
+
+<?php foreach ($data['notes'] as $note) {
+        ?>
+<p>Titre :
+  <?= $note['title'] ?>
+</p>
+<p>Contenu :
+  <?= $note['content'] ?>
+</p>
+
+<a href="/client/deleteNote/<?= $note['id'] ?>" onClick="return confirm('Are you sure ?')">Remove</a>
+<a href="/client/editNote/<?= $note['id'] ?>">Edit</a>
+
+<?php
+    } ?>
+
+<?php endif; ?>
+
+<?php include(ROOT . 'app/views/templates/footer.php');

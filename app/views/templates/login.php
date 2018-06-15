@@ -1,5 +1,7 @@
 <?php
 include('head.php');
+
+
 ?>
 <div class="login">
 
@@ -39,7 +41,6 @@ include('head.php');
             </div>
 
           <button type="submit" value="connexion">Valider</button>
-            <input type="submit" value="connexion" placeholder="valider">
         </form>
       </div>
     </div>
@@ -50,16 +51,3 @@ include('head.php');
 <?php
 include('footer.php');
 ?>
-
-<div class="home">
-  <div class="row fullWidth">
-    <div class="columns medium-3">
-      <div class="logo">
-
-      </div>
-    </div>
-    <div class="columns medium-9">
-
-    </div>
-  </div>
-</div>

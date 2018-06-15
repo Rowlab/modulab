@@ -8,10 +8,6 @@ class Note extends Controller
      */
     public function index()
     {
-        if (!isset($_SESSION['id'])) {
-            header('Location: /admin/connexion');
-        }
-
         $users = DB::select('select `id`, `name`, `surname`, `mail`, `active` from user order by id desc');
         $this->view('user/userList', ['users' => $users]);
     }
@@ -22,7 +18,7 @@ class Note extends Controller
      * @param integer $id
      * @return bool
      */
-    public function deleteUser(int $id)
+    public function deleteNote(int $id)
     {
         if (!isset($_SESSION['id'])) {
             header('Location: /admin/connexion');
@@ -32,17 +28,6 @@ class Note extends Controller
 
         header('Location: /user/userList');
     }
-    /**
-     * Undocumented function
-     *
-     * @param [type] $id
-     * @return void
-     */
-    public function disableUser($id)
-    {
-        DB::update('update user set active = 0 where id = '.$id.'');
-        header('Location: /user/useruserList');
-    }
 
     /**
      * Undocumented function
@@ -50,19 +35,7 @@ class Note extends Controller
      * @param [type] $id
      * @return void
      */
-    public function enableUser($id)
-    {
-        DB::update('update user set active = 1 where id = '.$id.'');
-        header('Location: /user/useruserList');
-    }
-
-    /**
-     * Undocumented function
-     *
-     * @param [type] $id
-     * @return void
-     */
-    public function editUser($id)
+    public function editNote($id)
     {
         $user = DB::select('select * from user where id = '.$id.'');
         $userInfo = DB::select('select * from user_info where user_id = '.$id.'');
