@@ -18,13 +18,13 @@
       </nav>
     </div>
     <div class="columns medium-9 paddless">
-        <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
+      <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
 
         <?php include(ROOT . 'app/views/templates/home-content.php');?>
 
         <?php //include(ROOT . 'app/views/templates/home-profil.php');?>
 
-      </div>
     </div>
   </div>
+</div>
 </div>

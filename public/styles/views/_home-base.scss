@@ -4,13 +4,12 @@
   margin-right: auto;
   max-width: initial;
 }
-.paddless{
+.paddless {
   padding: 0;
 }
 
-.home{
-
-  &__aside{
+.home {
+  &__aside {
     display: flex;
     flex-direction: column;
     height: 100vh;
@@ -18,14 +17,14 @@
     background-color: $main-color;
     box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.03);
 
-    &__logo{
+    &__logo {
       margin: 0 auto;
       width: 70px;
       height: 43.7px;
       margin-bottom: 75px;
       background-image: url('../images/modulab_logo.svg');
     }
-    &__links{
+    &__links {
       font-size: 18px;
       position: relative;
       text-align: left;
@@ -33,12 +32,12 @@
       font-family: $avalon-bold;
       left: 40%;
 
-      a{
+      a {
         color: #a8a8a8;
       }
 
-      &:nth-child(2){
-        & a::before{
+      &:nth-child(2) {
+        & a::before {
           position: absolute;
           content: '';
           top: 50%;
@@ -49,10 +48,9 @@
           height: 20px;
           background-size: 100%;
         }
-
       }
-      &:nth-child(3){
-        & a::before{
+      &:nth-child(3) {
+        & a::before {
           position: absolute;
           content: '';
           top: 50%;
@@ -62,16 +60,15 @@
           width: 20px;
           height: 20px;
         }
-
       }
-      &:nth-child(4){
+      &:nth-child(4) {
         left: calc(40% - 62px);
       }
 
       &.selected:not(:nth-child(4)):not(:nth-child(3)){
         position: relative;
 
-        & a{
+        & a {
           color: $terciary-color;
 
           &:before{
@@ -120,7 +117,7 @@
         background-color: $main-color;
         box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.03);
 
-        &:after{
+        &:after {
           content: '';
           position: absolute;
           top: 50%;
@@ -131,7 +128,7 @@
           background-color: $fourth-color;
           left: 43px;
         }
-        &:before{
+        &:before {
           content: '';
           position: absolute;
           top: 50%;
@@ -148,31 +145,65 @@
     }
   }
 
-  &__content{
+  &__content {
     height: calc(100vh - 110px);
     background-color: #f6f6f6;
     width: 100%;
 
-    &__title{
+    &__details {
+      h1 {
+        font-family: $avalon-demi;
+        color: #a8a8a8;
+      }
+      &__notes {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+        padding: 30px;
+      }
+
+      &__note {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 30px 0 rgba(0, 0, 0, 0.07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 35px 20px;
+
+        p {
+          margin-bottom: 0;
+          border-radius: 17.5px;
+          background-color: #f6f6f6;
+          padding: 10px 25px;
+        }
+      }
+    }
+
+    &__title {
       color: #a8a8a8;
       font-size: 32px;
       font-family: $avalon-bold;
     }
 
-    &__subtitle{
+    &__subtitle {
       color: #a8a8a8;
       font-size: 22px;
       font-family: $avalon-bold;
     }
 
-    &__wiget{
+    &__wiget {
       margin-top: 50px;
       width: 100%;
       border: 1px dashed $terciary-color;
       border-radius: 10px;
       cursor: pointer;
 
-      p{
+      p {
         text-align: center;
         margin-bottom: 0;
         padding-top: 17px;
@@ -180,20 +211,21 @@
       }
     }
 
-    &__wraper{
+    &__wraper {
       margin-left: 50px;
       padding-top: 50px;
       margin-right: 50px;
     }
 
-    &__profil{
-
-      &__info{
+    &__profil {
+      &__info {
         width: calc(100% - 290px);
 
-        p{margin-bottom: 13px}
+        p {
+          margin-bottom: 13px;
+        }
 
-        &__name{
+        &__name {
           margin-top: 33px;
           display: inline-block;
           padding-right: 10px;
@@ -202,18 +234,18 @@
           color: $terciary-color;
         }
 
-        &__job{
+        &__job {
           display: inline-block;
           font-size: 14px;
           font-family: $avalon;
           color: $terciary-color;
         }
 
-        &__phone{
+        &__phone {
           position: relative;
           padding-left: 25px;
 
-          &:before{
+          &:before {
             content: '';
             position: absolute;
             left: 5px;
@@ -224,16 +256,16 @@
             background-image: url('../images/ICON_PHONE.svg');
             background-position: center;
             background-repeat: no-repeat;
-            background-size:100%;
+            background-size: 100%;
           }
         }
 
-        &__email{
+        &__email {
           position: relative;
           padding-left: 25px;
           margin-bottom: 32px !important;
 
-          &:before{
+          &:before {
             content: '';
             position: absolute;
             left: 5px;
@@ -247,7 +279,7 @@
           }
         }
 
-        &__modify{
+        &__modify {
           position: absolute;
           content: '';
           top: 40px;
@@ -256,7 +288,7 @@
         }
       }
 
-      &__wraper{
+      &__wraper {
         margin-top: 50px;
         position: relative;
         width: 100%;
@@ -266,7 +298,7 @@
         box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
         border-radius: 10px;
 
-        &:before{
+        &:before {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -277,7 +309,7 @@
           background-color: white;
           border-radius: 50%;
         }
-        &:after{
+        &:after {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
@@ -369,5 +401,4 @@
       }
     }
   }
-
 }
