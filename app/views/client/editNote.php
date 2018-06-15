@@ -43,7 +43,7 @@
  } ?>" placeholder="content">
 
             <input type="hidden" name="id" value="<?= $data['note'][0]['id'] ?>" />
-            <button class="button" type="input">Edit</button>
+            <button class="button" type="input">Modifier</button>
           </form>
           </form>
         </div>

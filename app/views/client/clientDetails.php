@@ -7,7 +7,7 @@
         <div class="home__aside__logo"></div>
 
         <div class="home__aside__links selected">
-          <a href="#">Overview</a>
+          <a href="/">Overview</a>
         </div>
         <div class="home__aside__links">
           <a href="/client">Clients</a>
@@ -25,7 +25,10 @@
         <div class="home__content__wraper">
           <div class="home__content__details">
             <div class="home__content__details__notes">
-              <h1>Nota bene</h1>
+              <h1>
+                <?= $data['client'][0]['company_name'] ?>- Nota bene
+
+              </h1>
               <?php if (isset($data['notes'])) :?>
 
               <?php foreach ($data['notes'] as $note) {
@@ -62,5 +65,4 @@
 </div>
 </div>
 
-<?php include(ROOT . 'app/views/templates/footer.php'); ?>
-
+<?php include(ROOT . 'app/views/templates/footer.php');

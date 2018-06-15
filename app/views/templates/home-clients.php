@@ -12,9 +12,25 @@
       </ul>
     </div>
     <div class="home__content__clients__wraper">
+      <?php foreach ($data['clients'] as $client) {
+    ?>
       <div class="home__content__clients">
-        <a href="#"> <h3>Adfab</h3> <div class="home__content__clients__modify"></div> </a>
+        <a href="/client/detailsClient/<?= $client['id'] ?>">
+          <h3>
+            <?= $client['company_name'] ?>
+          </h3>
+          <a class="home__content__clients__modify" href="/client/editClient/<?= $client['id'] ?>"></a>
+          <?php if ($_SESSION['infos'][0]['role'] == 0) : ?>
+          <a class="home__content__clients__remove" href="/client/deleteClient/<?= $client['id'] ?>"
+            onClick="return confirm('Are you sure ?')">X</a>
+          <?php endif; ?>
+        </a>
       </div>
+      <?php
+} ?>
+      <a class="button expanded" href="/client/addClient">Ajouter un nouveau client</a>
+
+
     </div>
   </div>
 </div>

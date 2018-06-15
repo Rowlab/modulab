@@ -2,8 +2,8 @@
 -- version 4.7.7
 -- https://www.phpmyadmin.net/
 --
--- Hôte : localhost
--- Généré le :  jeu. 14 juin 2018 à 08:36
+-- Hôte : localhost:8889
+-- Généré le :  ven. 15 juin 2018 à 06:47
 -- Version du serveur :  5.6.38
 -- Version de PHP :  7.2.1
 
@@ -29,10 +29,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `client` (
   `id` int(11) NOT NULL,
   `company_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `created_by` int(11) DEFAULT NULL,
-  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
-  `active` tinyint(4) NOT NULL DEFAULT '0'
+  `created_by` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `client`
+--
+
+INSERT INTO `client` (`id`, `company_name`, `created_by`, `created_at`, `active`) VALUES
+(25, 'benoit', '123', '2018-06-15 06:40:33.786192', 0);
 
 -- --------------------------------------------------------
 
@@ -41,7 +48,7 @@ CREATE TABLE `client` (
 --
 
 CREATE TABLE `client_info` (
-  `client_id` int(11) DEFAULT NULL,
+  `client_id` int(11) NOT NULL DEFAULT '0',
   `contact_name` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `phone` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `fax` varchar(15) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -49,6 +56,20 @@ CREATE TABLE `client_info` (
   `mail` varchar(120) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `client_info`
+--
+
+INSERT INTO `client_info` (`client_id`, `contact_name`, `phone`, `fax`, `address`, `mail`, `content`) VALUES
+(19, 'bbb', 'bbb', 'bb', 'bb', 'bb', NULL),
+(20, 'CC', 'CCC', 'CCC', 'CCC', 'CC', NULL),
+(21, '1111', '111', '111', '111', '111', NULL),
+(22, NULL, NULL, NULL, NULL, NULL, NULL),
+(23, 'test', 'test', 'test', 'test', 'test', NULL),
+(24, NULL, NULL, NULL, NULL, NULL, NULL),
+(25, 'test', 'test', 'test', 'test', 'test', NULL),
+(26, NULL, NULL, NULL, NULL, NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -59,7 +80,7 @@ CREATE TABLE `client_info` (
 CREATE TABLE `job` (
   `id` int(11) NOT NULL,
   `fonction` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `active` tinyint(4) NOT NULL DEFAULT '0'
+  `active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 -- --------------------------------------------------------
@@ -69,14 +90,28 @@ CREATE TABLE `job` (
 --
 
 CREATE TABLE `note` (
+  `id` int(11) NOT NULL,
   `client_id` int(11) NOT NULL,
   `title` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `content` text COLLATE utf8mb4_unicode_ci,
   `type` varchar(45) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `created_by` int(11) NOT NULL,
-  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
-  `active` tinyint(4) NOT NULL DEFAULT '0'
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `active` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Déchargement des données de la table `note`
+--
+
+INSERT INTO `note` (`id`, `client_id`, `title`, `content`, `type`, `created_by`, `created_at`, `active`) VALUES
+(5, 19, 'note bbb', 'note bbb', NULL, 123, '2018-06-15 00:20:57.298045', 0),
+(6, 19, '2eme note bbb', '2eme note bbb', NULL, 123, '2018-06-15 00:22:36.332554', 0),
+(7, 21, 'note client 1', 'note client 1', NULL, 123, '2018-06-15 00:27:41.815711', 0),
+(8, 21, '2eme note client 1', '2eme note client 1', NULL, 123, '2018-06-15 00:27:52.665388', 0),
+(16, 23, 'sqf', 'fqsfsq', NULL, 123, '2018-06-15 00:44:37.924221', 0),
+(19, 23, 'benoit', 'benoit', NULL, 123, '2018-06-15 06:08:25.014899', 0),
+(21, 25, 'note', 'note', NULL, 123, '2018-06-15 06:43:05.681622', 0);
 
 -- --------------------------------------------------------
 
@@ -91,8 +126,8 @@ CREATE TABLE `user` (
   `job_id` int(11) DEFAULT NULL,
   `mail` varchar(120) COLLATE utf8mb4_unicode_ci NOT NULL,
   `password` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `created_at` timestamp(6) CURRENT_TIMESTAMP(6),
-  `active` tinyint(4) NOT NULL DEFAULT '1',
+  `created_at` timestamp(6) NOT NULL DEFAULT CURRENT_TIMESTAMP(6),
+  `active` int(11) NOT NULL DEFAULT '1',
   `role` int(11) NOT NULL DEFAULT '1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -101,11 +136,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `surname`, `job_id`, `mail`, `password`, `created_at`, `active`, `role`) VALUES
-(1, 'lemaire', 'benoit', NULL, 'benoit.lemaire@gmail.com', '$2y$10$kIjzHmV/.7eN5MVzeDT7muW2KwbhNJ/yiiuTN6qR3bIJ7u3ZGBrBS', NULL, 1, 0),
-(21, 'aaa', 'aaa', NULL, 'aaa', '$2y$10$JIuX.FqMOz9Ryu9zvbIrdehWq5Go3k5AB7atdd0nNM3wew53fJrtq', NULL, 1, 1),
-(23, 'test', 'test', NULL, 'test', '$2y$10$VcakyIutUWRDzPOIPdcI3eW5rrd0m8ofyxwUCP6dp23mSXz6TknRG', NULL, 1, 1),
-(24, 'fsfqs', 'fqdsfa', NULL, 'fqsdfqs', '$2y$10$G6REYrIy5tpskJ/gA/IoJuJfnFDqSbP0KlI4XCmMyJellhP87kPJK', NULL, 1, 1),
-(25, 'qsdfsq', 'gqdfqs', NULL, 'aa', '$2y$10$R6wpMGf7tEKXWI954MdB.OmsmoskfprlI8ZyzgQbFheRhdMUx4ZIu', '2018-06-14 08:24:45.891420', 1, 1);
+(23, '123', '123', NULL, '123', '$2y$10$76p6beq7hHCyCmRSoHOlx.NDsIuM7yFkeWq9bmi/Rbnn/uHmyRnEu', '2018-06-14 11:45:11.410050', 1, 0),
+(33, 'aa', 'aa', NULL, 'benoit', '$2y$10$rNq9PXgEWD9Jz9nLeTwsoOiLw1NGqCdvRar/YVjX1GWTUOaHBbhDu', '2018-06-14 22:00:26.000000', 1, 1);
 
 -- --------------------------------------------------------
 
@@ -125,10 +157,7 @@ CREATE TABLE `user_info` (
 --
 
 INSERT INTO `user_info` (`user_id`, `address`, `phone`, `fax`) VALUES
-(21, NULL, NULL, NULL),
-(23, NULL, NULL, NULL),
-(24, NULL, NULL, NULL),
-(25, NULL, NULL, NULL);
+(23, '', '', '');
 
 --
 -- Index pour les tables déchargées
@@ -138,15 +167,13 @@ INSERT INTO `user_info` (`user_id`, `address`, `phone`, `fax`) VALUES
 -- Index pour la table `client`
 --
 ALTER TABLE `client`
-  ADD PRIMARY KEY (`id`),
-  ADD KEY `client_created_by_idx` (`created_by`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `client_info`
 --
 ALTER TABLE `client_info`
-  ADD UNIQUE KEY `client_id` (`client_id`),
-  ADD KEY `client_id_idx` (`client_id`);
+  ADD PRIMARY KEY (`client_id`);
 
 --
 -- Index pour la table `job`
@@ -158,9 +185,7 @@ ALTER TABLE `job`
 -- Index pour la table `note`
 --
 ALTER TABLE `note`
-  ADD UNIQUE KEY `client_id` (`client_id`),
-  ADD KEY `note_created_by_idx` (`created_by`),
-  ADD KEY `note_client_id_idx` (`client_id`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Index pour la table `user`
@@ -184,7 +209,7 @@ ALTER TABLE `user_info`
 -- AUTO_INCREMENT pour la table `client`
 --
 ALTER TABLE `client`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 
 --
 -- AUTO_INCREMENT pour la table `job`
@@ -193,33 +218,20 @@ ALTER TABLE `job`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
+-- AUTO_INCREMENT pour la table `note`
+--
+ALTER TABLE `note`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
+
+--
 -- AUTO_INCREMENT pour la table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=34;
 
 --
 -- Contraintes pour les tables déchargées
 --
-
---
--- Contraintes pour la table `client`
---
-ALTER TABLE `client`
-  ADD CONSTRAINT `client_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `client_info`
---
-ALTER TABLE `client_info`
-  ADD CONSTRAINT `client_id` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE CASCADE ON UPDATE NO ACTION;
-
---
--- Contraintes pour la table `note`
---
-ALTER TABLE `note`
-  ADD CONSTRAINT `note_client_id` FOREIGN KEY (`client_id`) REFERENCES `client` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION,
-  ADD CONSTRAINT `note_created_by` FOREIGN KEY (`created_by`) REFERENCES `user` (`id`) ON DELETE NO ACTION ON UPDATE NO ACTION;
 
 --
 -- Contraintes pour la table `user`
