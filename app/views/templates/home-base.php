@@ -8,7 +8,7 @@
           <a href="#">Overview</a>
         </div>
         <div class="home__aside__links">
-          <a href="#">Clients</a>
+          <a href="/client">Clients</a>
         </div>
         <div class="home__aside__links">
           <a href="#" class="plug-in">Ajouter un plug-in</a>
@@ -21,10 +21,10 @@
 
 
 
-        <?php include(ROOT . 'app/views/templates/home-content.php');?>
-        <?php //include(ROOT . 'app/views/templates/home-profil.php');?>
+      <?php include(ROOT . 'app/views/templates/home-content.php');?>
+      <?php //include(ROOT . 'app/views/templates/home-profil.php');?>
 
-      </div>
     </div>
   </div>
+</div>
 </div>

@@ -16,6 +16,11 @@ class User extends Controller
         $this->view('user/userList', ['users' => $users]);
     }
 
+    public function profil()
+    {
+        $this->view('templates/home-profil');
+    }
+
 
     /**
      * Undocumented function
