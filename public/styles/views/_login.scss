@@ -27,10 +27,11 @@
     &__logo{
       margin: 0 auto;
       width: 70px;
-      background-color: blue;
+      height: 46px;
       padding-bottom: 30px;
+      background-repeat: no-repeat;
       background-image: url('../images/modulab_logo.svg');
-      
+
       img{
         width: 100%;
         height: 100%;
