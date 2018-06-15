@@ -14,7 +14,7 @@
 
     <div class="home__account__user__more">
       <a href="/profil"> Profil</a>
-      <a href="#"> Déconnexion</a>
+      <a href="/admin/deconnexion"> Déconnexion</a>
     </div>
     </div>
   </div>
