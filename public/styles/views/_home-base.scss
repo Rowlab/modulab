@@ -14,7 +14,7 @@
     flex-direction: column;
     height: 100vh;
     padding-top: 40px;
-    background-color: #fbfbfb;
+    background-color: $main-color;
     box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.03);
 
     &__logo{
@@ -25,13 +25,12 @@
       background-image: url('../images/modulab_logo.svg');
     }
     &__links{
-      min-width: 78px;
-      margin: 0 auto;
       font-size: 18px;
       position: relative;
       text-align: left;
       margin-bottom: 53px;
       font-family: $avalon-bold;
+      left: 40%;
 
       a{
         color: #a8a8a8;
@@ -49,6 +48,7 @@
           height: 20px;
           background-size: 100%;
         }
+
       }
       &:nth-child(3){
         & a::before{
@@ -61,20 +61,29 @@
           width: 20px;
           height: 20px;
         }
+
       }
+      &:nth-child(4){
+        left: calc(40% - 62px);
+      }
+
       &.selected{
-        // color: #666666;
+        // background-color: red;
         position: relative;
 
-        & a::before{
-          position: absolute;
-          content: '';
-          top: 50%;
-          transform: translateY(-50%);
-          left: -40px;
-          background-image: url('../images/ICON_HOME_B.svg')!important;
-          width: 20px;
-          height: 20px;
+        & a{
+          color: $terciary-color;
+          &:before{
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px;
+            background-image: url('../images/icon_b.svg');
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
         }
       }
       .plug-in{
@@ -83,12 +92,11 @@
         padding-bottom: 14px;
         padding-left: 62px;
         padding-right: 39px;
-        left: 10%;
 
         width: 212px;
         height: 45px;
         border-radius: 22.5px;
-        background-color: #fbfbfb;
+        background-color: $main-color;
         box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.03);
 
         &:after{
@@ -118,14 +126,130 @@
       }
     }
   }
-  &__account{
-    height: 100px;
-    background-color: #fbfbfb;
-    width: 100%;
-  }
   &__content{
-    height: calc(100vh - 100px);
+    height: calc(100vh - 110px);
     background-color: #f6f6f6;
     width: 100%;
+
+    &__title{
+      color: #a8a8a8;
+      font-size: 32px;
+      font-family: $avalon-bold;
+
+    }
+    &__subtitle{
+      color: #a8a8a8;
+      font-size: 22px;
+      font-family: $avalon-bold;
+    }
+    &__wiget{
+      margin-top: 50px;
+      width: 100%;
+      border: 1px dashed #666666;
+      border-radius: 10px;
+      cursor: pointer;
+
+      p{
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 17px;
+        padding-bottom: 15px;
+      }
+    }
+    &__wraper{
+      margin-left: 50px;
+      padding-top: 50px;
+      margin-right: 50px;
+    }
+
+    &__profil{
+      &__info{
+        width: calc(100% - 290px);
+        p{margin-bottom: 13px}
+        &__name{
+          margin-top: 33px;
+          display: inline-block;
+          padding-right: 10px;
+          font-size: 22px;
+          font-family: $avalon-bold;
+          color: #666666;
+        }
+        &__job{
+          display: inline-block;
+          font-size: 14px;
+          font-family: $avalon;
+          color: #666666;
+        }
+        &__phone{
+          position: relative;
+          padding-left: 25px;
+
+          &:before{
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 9px;
+            height: 22px;
+            background-image: url('../images/ICON_PHONE.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:100%;
+          }
+        }
+        &__email{
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 32px !important;
+
+          &:before{
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background-image: url('../images/ICON_EMAIL.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+      &__wraper{
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: row-reverse;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+        border-radius: 10px;
+
+        &:before{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 35px;
+          content: '';
+          width: 220px;
+          height: 220px;
+          background-color: white;
+          border-radius: 50%;
+        }
+        &:after{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 50px;
+          content: '';
+          width: 190px;
+          height: 190px;
+          background-color: #0086ff;
+          border-radius: 50%;
+        }
+      }
+    }
   }
 }

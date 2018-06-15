@@ -40,14 +40,9 @@ include('head.php');
               <a href="#">Mot de passe oublié ?</a>
             </div>
 
-<<<<<<< HEAD
-          <button type="submit" value="connexion">Valider</button>
-        </form>
-=======
             <button type="submit" value="connexion">Valider</button>
           </form>
         </div>
->>>>>>> d90b96bf26746d6fdc98d585f8e7d2034d5c7190
       </div>
     </div>
 
@@ -55,19 +50,3 @@ include('head.php');
   <?php
 include('footer.php');
 ?>
-<<<<<<< HEAD
-=======
-
-  <div class="home">
-    <div class="row fullWidth">
-      <div class="columns medium-3">
-        <div class="logo">
-
-        </div>
-      </div>
-      <div class="columns medium-9">
-
-      </div>
-    </div>
-  </div>
->>>>>>> d90b96bf26746d6fdc98d585f8e7d2034d5c7190
