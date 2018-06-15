@@ -4,6 +4,9 @@
 !.vscode/launch.json
 !.vscode/extensions.json
 
+#Dist
+/public/dist/**/*
+
 # Logs
 logs
 *.log
@@ -78,7 +81,8 @@ typings/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -221,7 +225,8 @@ $RECYCLE.BIN/
 .LSOverride
 
 # Icon must end with two \r
-Icon
+Icon
+
 
 # Thumbnails
 ._*
@@ -401,3 +406,4 @@ fabric.properties
 
 # Editor-based Rest Client
 .idea/httpRequests
+.idea/*

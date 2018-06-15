@@ -1,0 +1,424 @@
+.fullWidth {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  max-width: initial;
+}
+.paddless {
+  padding: 0;
+}
+
+.home {
+  &__aside {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    padding-top: 40px;
+    background-color: $main-color;
+    box-shadow: 10px 0 30px 0 rgba(0, 0, 0, 0.03);
+
+    &__logo {
+      margin: 0 auto;
+      width: 70px;
+      height: 43.7px;
+      margin-bottom: 75px;
+      background-image: url('../images/modulab_logo.svg');
+    }
+    &__links {
+      font-size: 18px;
+      position: relative;
+      text-align: left;
+      margin-bottom: 53px;
+      font-family: $avalon-bold;
+      left: 40%;
+
+      a {
+        color: #a8a8a8;
+      }
+
+      &:nth-child(2) {
+        & a::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          transform: translateY(-50%);
+          left: -40px;
+          background-image: url('../images/ICON_HOME.svg');
+          width: 20px;
+          height: 20px;
+          background-size: 100%;
+        }
+      }
+      &:nth-child(3) {
+        & a::before {
+          position: absolute;
+          content: '';
+          top: 50%;
+          transform: translateY(-50%);
+          left: -40px;
+          background-image: url('../images/ICON_CLIENTS.svg');
+          width: 20px;
+          height: 20px;
+        }
+      }
+      &:nth-child(4) {
+        left: calc(40% - 62px);
+      }
+
+      &.selected:not(:nth-child(4)):not(:nth-child(3)) {
+        position: relative;
+
+        & a {
+          color: $terciary-color;
+
+          &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px;
+            background-image: url('../images/icon_b.svg');
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+      }
+
+      &.selected:not(:nth-child(2)) {
+        position: relative;
+
+        & a {
+          color: $terciary-color;
+
+          &:before {
+            position: absolute;
+            content: '';
+            top: 50%;
+            transform: translateY(-50%);
+            left: -40px;
+            background-image: url('../images/cl_b.svg');
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+          }
+        }
+      }
+      .plug-in {
+        position: relative;
+        padding-top: 16px;
+        padding-bottom: 14px;
+        padding-left: 62px;
+        padding-right: 39px;
+
+        width: 212px;
+        height: 45px;
+        border-radius: 22.5px;
+        background-color: $main-color;
+        box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.03);
+
+        &:after {
+          content: '';
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          height: 15px;
+          width: 1px;
+          border: solid 2px $fourth-color;
+          background-color: $fourth-color;
+          left: 43px;
+        }
+        &:before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          width: 10px;
+          height: 10px;
+          left: 25px;
+          background-repeat: no-repeat;
+          background-position: center;
+          background-size: 118%;
+          transform: translateY(-50%);
+          background-image: url('../images/ICON_ADD.svg');
+        }
+      }
+    }
+  }
+
+  &__content {
+    height: calc(100vh - 110px);
+    background-color: #f6f6f6;
+    width: 100%;
+
+    &__details {
+      h1 {
+        font-family: $avalon-demi;
+        color: #a8a8a8;
+      }
+      &__notes {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+        padding: 30px;
+      }
+
+      &__note {
+        width: 100%;
+        height: auto;
+        background-color: #ffffff;
+        box-shadow: 2px 2px 30px 0 rgba(0, 0, 0, 0.07);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 10px 0;
+        padding: 35px 20px;
+
+        p {
+          margin-bottom: 0;
+          border-radius: 17.5px;
+          background-color: #f6f6f6;
+          padding: 10px 25px;
+        }
+      }
+    }
+
+    &__title {
+      color: #a8a8a8;
+      font-size: 32px;
+      font-family: $avalon-bold;
+    }
+
+    &__subtitle {
+      color: #a8a8a8;
+      font-size: 22px;
+      font-family: $avalon-bold;
+    }
+
+    &__wiget {
+      margin-top: 50px;
+      width: 100%;
+      border: 1px dashed $terciary-color;
+      border-radius: 10px;
+      cursor: pointer;
+
+      p {
+        text-align: center;
+        margin-bottom: 0;
+        padding-top: 17px;
+        padding-bottom: 15px;
+      }
+    }
+
+    &__wraper {
+      margin-left: 50px;
+      padding-top: 50px;
+      margin-right: 50px;
+    }
+
+    &__profil {
+      &__info {
+        width: calc(100% - 290px);
+
+        p {
+          margin-bottom: 13px;
+        }
+
+        &__name {
+          margin-top: 33px;
+          display: inline-block;
+          padding-right: 10px;
+          font-size: 22px;
+          font-family: $avalon-bold;
+          color: $terciary-color;
+        }
+
+        &__job {
+          display: inline-block;
+          font-size: 14px;
+          font-family: $avalon;
+          color: $terciary-color;
+        }
+
+        &__phone {
+          position: relative;
+          padding-left: 25px;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 9px;
+            height: 22px;
+            background-image: url('../images/ICON_PHONE.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: 100%;
+          }
+        }
+
+        &__email {
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 32px !important;
+
+          &:before {
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background-image: url('../images/ICON_EMAIL.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+
+        &__modify {
+          position: absolute;
+          content: '';
+          top: 40px;
+          right: 40px;
+          background-image: url('../images/EDIT.svg');
+        }
+
+        &__remove {
+          position: absolute;
+          content: '';
+          top: 40px;
+          right: 60px;
+        }
+      }
+
+      &__wraper {
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: row-reverse;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+        border-radius: 10px;
+
+        &:before {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 35px;
+          content: '';
+          width: 220px;
+          height: 220px;
+          background-color: white;
+          border-radius: 50%;
+        }
+        &:after {
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 50px;
+          content: '';
+          width: 190px;
+          height: 190px;
+          background-color: #0086ff;
+          border-radius: 50%;
+        }
+      }
+    }
+
+    &__clients {
+      margin-top: 10px;
+      box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+      padding: 30px;
+      position: relative;
+      cursor: pointer;
+      transition: 0.4s ease all;
+      border-radius: 10px;
+      background-color: white;
+
+      &:hover {
+        box-shadow: 11px 8px 0 7px rgba(0, 0, 0, 0.02);
+      }
+      h3 {
+        font-size: 25px;
+        font-family: $avalon-bold;
+        color: $terciary-color;
+        display: inline-block;
+      }
+
+      &__modify {
+        background-image: url('../images/ICON_EDIT.svg');
+        width: 20px;
+        height: 20px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: 100%;
+        position: absolute;
+        right: 50px;
+        top: 50%;
+        transform: translateY(-50%);
+      }
+      &__wraper {
+        margin-top: 20px;
+      }
+
+      &__search {
+        margin-top: 30px;
+        border-radius: 39.5px;
+        background-color: #fbfbfb;
+        box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.03);
+        padding-left: 50px;
+        padding-top: 24px;
+        padding-bottom: 23px;
+        position: relative;
+
+        &::placeholder {
+          font-family: $avalon;
+          font-size: 22px;
+        }
+      }
+      &__order {
+        ul {
+          display: flex;
+          li {
+            list-style: none;
+            margin-left: 20px;
+            font-size: 18px;
+            font-family: $avalon;
+            color: $terciary-color;
+            cursor: pointer;
+
+            &.active {
+              font-family: $avalon-bold;
+            }
+            &:hover {
+              font-family: $avalon-bold;
+            }
+            &:first-child {
+              margin-left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.expanded {
+  padding: 30px 0;
+  margin-top: 10px;
+  border-radius: 10px;
+  box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.05);
+  background-color: #f6f6f6;
+  border: dashed 1px #666666;
+  color: black;
+
+  &:hover {
+    background: transparent;
+    color: black;
+  }
+}

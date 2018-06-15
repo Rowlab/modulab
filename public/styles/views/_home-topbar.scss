@@ -1,0 +1,118 @@
+.home__account{
+  height: 110px;
+  background-color: $main-color;
+  width: 100%;
+  display: flex;
+  flex-direction: row-reverse;
+
+  &__user{
+    margin-right: 50px;
+    margin-top: 15px;
+    max-width: 330px;
+    width: 100%;
+    max-height: 80px;
+    height: 100%;
+    border-radius: 41px;
+    background-color: $main-color;
+    box-shadow: 3px 3px 10px 0 rgba(0, 0, 0, 0.05);
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    transition: 0.7s ease all;
+    cursor: pointer;
+    overflow-y: hidden;
+    display: flow-root;
+
+    &.droped{
+      height: 3000px;
+      max-height: 160px;
+    }
+
+    &__info{
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      height: 78px;
+
+      &__image{
+        background-color: #0086FF;
+        height: 60px;
+        width: 60px;
+        border-radius: 50%;
+        margin-left: 10px;
+      }
+      &__name{
+        font-size: 18px;
+        color: $terciary-color;
+        font-family: $avalon-bold;
+        margin-bottom: 0;
+        width: 180px;
+        position: relative;
+
+        &__job{
+          font-size: 15px;
+          font-family: $avalon;
+        }
+        &:after{
+          position: absolute;
+          right: 12px;
+          top: 50%;
+          height: 50%;
+          width: 2px;
+          background-color: $fourth-color;
+          transform: translateY(-50%);
+          content: '';
+        }
+      }
+      &__menu_toggler{
+        width: 14px;
+        height: 14px;
+        border-left: 2px solid #000;
+        border-bottom: 2px solid #000;
+        border-radius: 16%;
+        transform: rotate(-45deg) translateY(-50%);
+        margin-right: 30px;
+        transition: 0.5s ease all;
+        position: relative;
+
+        &.toggled{
+          transform: rotate(135deg) translateY(-28%);
+        }
+      }
+    }
+
+    &__more{
+      display: flex;
+      flex-direction: column;
+      margin-left: 88px;
+      width: calc(100% - 110px);
+
+      a{
+       color: $terciary-color;
+       position: relative;
+       padding-top: 10px;
+       padding-bottom:  5px;
+       font-size: 15px;
+       font-family: $avalon;
+       cursor: pointer;
+
+       &:hover{
+         text-decoration: underline;
+       }
+
+        &:before{
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 2px;
+          content: '';
+          background-color: $fourth-color;
+        }
+      }
+    }
+  }
+}

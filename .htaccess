@@ -1,0 +1,7 @@
+Options +FollowSymLinks
+
+RewriteEngine on
+
+RewriteBase /modulab
+
+RewriteRule ^(.*)$ /public/$1
