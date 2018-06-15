@@ -9,6 +9,7 @@
 }
 
 .home{
+
   &__aside{
     display: flex;
     flex-direction: column;
@@ -126,6 +127,7 @@
       }
     }
   }
+
   &__content{
     height: calc(100vh - 110px);
     background-color: #f6f6f6;
@@ -137,11 +139,13 @@
       font-family: $avalon-bold;
 
     }
+
     &__subtitle{
       color: #a8a8a8;
       font-size: 22px;
       font-family: $avalon-bold;
     }
+
     &__wiget{
       margin-top: 50px;
       width: 100%;
@@ -156,6 +160,7 @@
         padding-bottom: 15px;
       }
     }
+
     &__wraper{
       margin-left: 50px;
       padding-top: 50px;
@@ -163,9 +168,12 @@
     }
 
     &__profil{
+
       &__info{
         width: calc(100% - 290px);
+
         p{margin-bottom: 13px}
+
         &__name{
           margin-top: 33px;
           display: inline-block;
@@ -174,12 +182,14 @@
           font-family: $avalon-bold;
           color: #666666;
         }
+
         &__job{
           display: inline-block;
           font-size: 14px;
           font-family: $avalon;
           color: #666666;
         }
+
         &__phone{
           position: relative;
           padding-left: 25px;
@@ -198,6 +208,7 @@
             background-size:100%;
           }
         }
+
         &__email{
           position: relative;
           padding-left: 25px;
@@ -216,7 +227,16 @@
             background-repeat: no-repeat;
           }
         }
+
+        &__modify{
+          position: absolute;
+          content: '';
+          top: 40px;
+          right: 40px;
+          background-image: url('../images/EDIT.svg');
+        }
       }
+
       &__wraper{
         margin-top: 50px;
         position: relative;
@@ -252,4 +272,5 @@
       }
     }
   }
+
 }
