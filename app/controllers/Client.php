@@ -63,7 +63,9 @@ class Client extends Controller
         }
         $client = DB::select('SELECT * FROM client inner join client_info where client_id = '.$id.'');
 
-        $notes = DB::select('SELECT * FROM note where client_id = '.$client[0]['id'].'');
+        if ($client) {
+            $notes = DB::select('SELECT * FROM note where client_id = '.$client[0]['id'].'');
+        }
 
         if (!$client) {
             header('Location: /client');
@@ -181,34 +183,25 @@ class Client extends Controller
             $erreur = [];
 
             if (empty($_POST['title'])) {
-                $erreur['title'] = 'Title name is required';
+                $erreur['title'] = 'Title is required';
             }
 
             if (empty($_POST['content'])) {
-                $erreur['content'] = 'Content name is required';
+                $erreur['content'] = 'Content is required';
             }
 
             if (!$erreur) {
-                DB::update('update client set company_name = :company_name where id = :id', [
-                  'company_name' => htmlspecialchars($_POST['company_name']),
+                $req = DB::update('update note set title = :title, content = :content where id = :id', [
+                  'title' => htmlspecialchars($_POST['title']),
+                  'content' => htmlspecialchars($_POST['content']),
                   'id' => $id
                 ]);
-
-                DB::update('update client_info set contact_name = :contact_name, fax = :fax, phone = :phone, address = :address, mail = :mail where client_id = :id', [
-                  'contact_name' => htmlspecialchars($_POST['contact_name']),
-                  'fax' => htmlspecialchars($_POST['fax']),
-                  'phone' => htmlspecialchars($_POST['phone']),
-                  'address' => htmlspecialchars($_POST['address']),
-                  'mail' => htmlspecialchars($_POST['mail']),
-                  'id' => $id
-                ]);
-      
-                header('Location: /client/clientList/'.$id.'');
+                header('Location: /client/detailsClient/' .$_POST['id']);
             }
 
-            $this->view('client/clientEdit/'.$id.'', ['erreur' => $erreur, 'client' => $client, 'clientInfos' => $clientInfo]);
+            $this->view('client/editNote/'.$id.'', ['erreur' => $erreur, 'note' => $note]);
         }
-        $this->view('client/clientEdit', ['client' => $client, 'clientInfos' => $clientInfo]);
+        $this->view('client/editNote', ['note' => $note]);
     }
     /**
      * Undocumented function
