@@ -17,7 +17,7 @@
       </nav>
     </div>
     <div class="columns medium-9 paddless">
-        <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
+      <?php include(ROOT . 'app/views/templates/home-topbar.php');?>
 
 
       <div class="home__content">
