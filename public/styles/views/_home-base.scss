@@ -161,5 +161,95 @@
       padding-top: 50px;
       margin-right: 50px;
     }
+
+    &__profil{
+      &__info{
+        width: calc(100% - 290px);
+        p{margin-bottom: 13px}
+        &__name{
+          margin-top: 33px;
+          display: inline-block;
+          padding-right: 10px;
+          font-size: 22px;
+          font-family: $avalon-bold;
+          color: #666666;
+        }
+        &__job{
+          display: inline-block;
+          font-size: 14px;
+          font-family: $avalon;
+          color: #666666;
+        }
+        &__phone{
+          position: relative;
+          padding-left: 25px;
+
+          &:before{
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 9px;
+            height: 22px;
+            background-image: url('../images/ICON_PHONE.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size:100%;
+          }
+        }
+        &__email{
+          position: relative;
+          padding-left: 25px;
+          margin-bottom: 32px !important;
+
+          &:before{
+            content: '';
+            position: absolute;
+            left: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 14px;
+            height: 14px;
+            background-image: url('../images/ICON_EMAIL.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+          }
+        }
+      }
+      &__wraper{
+        margin-top: 50px;
+        position: relative;
+        width: 100%;
+        background-color: white;
+        display: flex;
+        flex-direction: row-reverse;
+        box-shadow: 2px 2px 20px 0 rgba(0, 0, 0, 0.02);
+        border-radius: 10px;
+
+        &:before{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 35px;
+          content: '';
+          width: 220px;
+          height: 220px;
+          background-color: white;
+          border-radius: 50%;
+        }
+        &:after{
+          position: absolute;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 50px;
+          content: '';
+          width: 190px;
+          height: 190px;
+          background-color: #0086ff;
+          border-radius: 50%;
+        }
+      }
+    }
   }
 }
