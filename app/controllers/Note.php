@@ -8,57 +8,8 @@ class Note extends Controller
      */
     public function index()
     {
-        if (!isset($_SESSION['id'])) {
-            header('Location: /admin/connexion');
-        }
-
         $users = DB::select('select `id`, `name`, `surname`, `mail`, `active` from user order by id desc');
         $this->view('user/userList', ['users' => $users]);
-    }
-
-    /**
-     * Undocumented function
-     *
-     * @return array
-     */
-    public function addNote()
-    {
-        // $clients = DB::select('select * from client order by id desc');
-
-        if ((!empty($_POST))) {
-            $erreur = [];
-
-            if (empty($_POST['title'])) {
-                $erreur['title'] = 'Title is required';
-            }
-
-            if (empty($_POST['content'])) {
-                $erreur['content'] = 'Content is required';
-            }
-
-            if (empty($_POST['type'])) {
-                $erreur['type'] = 'Type is required';
-            }
-
-            if (!$erreur) {
-                DB::insert('INSERT INTO `note` (`title`, `content`, `type`) VALUES (:title, :content, :type)', [
-                  'title' => htmlspecialchars($_POST['title']),
-                  'content' => htmlspecialchars($_POST['content']),
-                  'type' => htmlspecialchars($_POST['type']),
-                  'created_by' => $_SESSION['infos'][0]['name'],
-                ]);
-                
-                $req = DB::select('select id from client order by id desc');
-                $test = DB::insert('INSERT INTO `client_info` (`client_id`) VALUES (:client_id)', [
-                  'client_id' => $req[0]['id'],
-                ]);
-
-                header('Location: /client');
-            }
-
-            $this->view('client/clientAdd', ['erreur' => $erreur, 'users' => $users]);
-        }
-        $this->view('client/clientAdd');
     }
 
     /**

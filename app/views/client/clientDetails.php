@@ -32,6 +32,25 @@ if (isset($data['client'])) {
 <?php
 } ?>
 
-<a href="/note/addNote">Add note</a>
+<a href="/client/addNote/<?= $data['client'][0]['id'] ?>">Add note</a>
+
+<?php if (isset($data['notes'])) :?>
+
+<?php foreach ($data['notes'] as $note) {
+        ?>
+<p>Titre :
+  <?= $note['title'] ?>
+</p>
+<p>Contenu :
+  <?= $note['content'] ?>
+</p>
+
+<a href="/client/deleteNote/<?= $note['id'] ?>" onClick="return confirm('Are you sure ?')">Remove</a>
+<a href="/client/editNote/<?= $note['id'] ?>">Edit</a>
+
+<?php
+    } ?>
+
+<?php endif; ?>
 
 <?php include(ROOT . 'app/views/templates/footer.php');
