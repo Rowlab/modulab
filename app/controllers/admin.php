@@ -40,7 +40,6 @@ class Admin extends Controller
             extract($_POST);
 
             $admin = $this->accountExists();
-
             if ($admin) {
                 $_SESSION['id'] = $admin['id'];
 
@@ -48,7 +47,7 @@ class Admin extends Controller
             } else {
                 $erreur = 'Identifiants erronés';
             }
-
+            // die('die');
             $this->view('templates/login', ['erreur' => $erreur]);
         }
 

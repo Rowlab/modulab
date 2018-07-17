@@ -1,14 +1,13 @@
 <?php
 include('head.php');
 
+// echo password_hash('test1234', PASSWORD_BCRYPT);
 
 ?>
 <div class="login">
 
-  
-<div class="login__loader">
-  <img src="../images/gif_loader.gif" alt="gifloader">
-</div>
+
+
 
   <div class="row">
     <div class="columns medium-7 medium-centered">
@@ -49,4 +48,3 @@ include('head.php');
   </div>
   <?php
 include('footer.php');
-?>
